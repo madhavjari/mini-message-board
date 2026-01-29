@@ -1,12 +1,12 @@
 const express = require("express");
 const indexRouter = require("./routes/indexRouter");
+const messagesRouter = require("./routes/messagesRouter");
 const app = express();
 
 const PORT = 3000;
-
-app.use("/", indexRouter);
-
 app.set("view engine", "ejs");
+
+app.use(indexRouter);
 
 app.listen(PORT, (error) => {
   if (error) {

@@ -11,10 +11,12 @@ const messages = [
   },
 ];
 
-const { Router } = require("express");
+const express = require("express");
 
-const indexRouter = Router();
+const indexRouter = express.Router();
 
-indexRouter.get("/", (req, res) => res.send("Index"));
+indexRouter.get("/", (req, res) => {
+  res.render("index", { title: "Home", messages: messages });
+});
 
 module.exports = indexRouter;

@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("./partials/head.ejs") %>
-  <body></body>
+  <body>
+    <header>
+      <h2>Mini-messages</h2>
+      <button>New Message</button>
+    </header>
+    <% currentDate = new Date()%>
+    <div><%= currentDate %></div>
+    <section>
+      <% messages.forEach((message) =>{ %>
+          <article>
+            <h2><%= message.user %></h2>
+            <h3><%= message.text %></h3>
+            <% date = message.added.getDate() %>
+            <% month = message.added.getMonth() + 1 %>
+            <% month =  month <=10 ? "0"+month : month %>
+            <% year = message.added.getFullYear() %>
+            <% hour = message.added.getHours() +1 %>
+            <% hour = hour <=10 ? "0"+hour : hour %>
+            <% minute = message.added.getMinutes() +1 %>
+            <% minute = minute <=10 ? "0"+minute : minute %>
+            <% second = message.added.getSeconds() +1 %>
+            <% second = second <=10 ? "0"+second : second %>
+            <h3><%= date+"/"+ month + "/" + year +" " + hour +":" + minute + ":" + second %></h3>
+          </article>
+        <%  }) %>
+    </section>
+  </body>
 </html>
