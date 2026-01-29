@@ -7,6 +7,7 @@ const PORT = 3000;
 app.set("view engine", "ejs");
 
 app.use(indexRouter);
+app.use(messagesRouter);
 
 app.listen(PORT, (error) => {
   if (error) {
