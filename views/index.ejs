@@ -3,16 +3,21 @@
   <%- include("./partials/head.ejs") %>
   <body>
     <header>
-      <h2>Mini-messages</h2>
+      <h2>Mini Message Board</h2>
       <button><a href="/new">New Message</a></button>
     </header>
     <% currentDate = new Date()%>
-    <div><%= currentDate %></div>
+    <div class="time"><%= currentDate %></div>
     <section>
+      <h3>All Messages</h3>
       <% messages.forEach((message) =>{ %>
-          <article>
-            <h2><%= message.user %></h2>
-            <h3><%= message.text %></h3>
+        <% messageId = message.id%3 %>
+        <% if (messageId === 1) messageId = 'one' %>
+        <% if (messageId === 0) messageId = 'zero' %>
+        <% if (messageId === 2) messageId = 'two' %>
+          <article class= "<%= messageId %>">
+            <h3><%= message.user %></h3>
+            <h4><%= message.text %></h4>
             <% date = message.added.getDate() %>
             <% month = message.added.getMonth() + 1 %>
             <% month =  month <=10 ? "0"+month : month %>
@@ -23,7 +28,7 @@
             <% minute = minute <=10 ? "0"+minute : minute %>
             <% second = message.added.getSeconds() +1 %>
             <% second = second <=10 ? "0"+second : second %>
-            <h3><%= date+"/"+ month + "/" + year +" " + hour +":" + minute + ":" + second %></h3>
+            <h5><%= date+"/"+ month + "/" + year +" " + hour +":" + minute + ":" + second %></h5>
           </article>
         <%  }) %>
     </section>

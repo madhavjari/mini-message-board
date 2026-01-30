@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+header {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(3, 3, 66);
+  padding: 1rem;
+  button {
+    background-color: white;
+    color: blue;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    a {
+      text-decoration: none;
+    }
+    a:visited {
+      color: blue;
+    }
+  }
+  button:hover {
+    transform: scale(1.05);
+  }
+}
+
+.time {
+  padding: 0.5rem;
+  background-color: white;
+}
+
+section {
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgb(245, 234, 220);
+}
+
+article {
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-wrap: wrap;
+}
+
+.one {
+  background-color: rgb(184, 128, 128, 0.7);
+}
+
+.two {
+  background-color: rgb(87, 224, 224, 0.7);
+}
+
+.zero {
+  background-color: rgb(233, 233, 87, 0.7);
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: rgb(245, 234, 220);
+  input {
+    width: 20vw;
+    padding: 5px;
+  }
+  textarea {
+    width: 20vw;
+    padding: 5px;
+    height: 20vh;
+  }
+  button {
+    cursor: pointer;
+    width: 20vw;
+    height: 2rem;
+    background-color: rgb(3, 3, 66);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: large;
+  }
+}

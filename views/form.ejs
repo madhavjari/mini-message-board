@@ -2,11 +2,17 @@
 <html lang="en">
   <%- include("./partials/head.ejs") %>
   <body>
+    <header>
+      <h2>Mini Message Board</h2>
+      <button><a href="/">Home</a></button>
+    </header>
+    <% currentDate = new Date()%>
+    <div class="time"><%= currentDate %></div>
     <form method="POST" action="/new">
       <label for="name">Your Name*</label>
       <input type="text" id="name" name="name" required />
       <label for="title">Your message*</label>
-      <input type="text" name="title" id="title" required />
+      <textarea type="text" name="title" id="title" required> </textarea>
       <button type="submit">Submit</button>
     </form>
   </body>
