@@ -1,21 +1,16 @@
 const express = require("express");
 
-const { messages } = require("./indexRouter");
+const db = require("../db/queries");
 
 const messagesRouter = express.Router();
 
 messagesRouter.get("/new", (req, res) => {
   res.render("form", { title: "New Message" });
 });
-messagesRouter.post("/new", (req, res) => {
-  const userData = req.body;
-  const currentId = messages.length + 1;
-  messages.push({
-    id: currentId,
-    text: userData.title,
-    user: userData.name,
-    added: new Date(),
-  });
+messagesRouter.post("/new", async (req, res) => {
+  const userData = await req.body;
+  userData["time"] = new Date();
+  await db.insertUsername(userData);
   res.redirect("/");
 });
 

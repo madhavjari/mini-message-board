@@ -16,19 +16,9 @@
         <% if (messageId === 0) messageId = 'zero' %>
         <% if (messageId === 2) messageId = 'two' %>
           <article class= "<%= messageId %>">
-            <h3><%= message.user %></h3>
-            <h4><%= message.text %></h4>
-            <% date = message.added.getDate() %>
-            <% month = message.added.getMonth() + 1 %>
-            <% month =  month <=10 ? "0"+month : month %>
-            <% year = message.added.getFullYear() %>
-            <% hour = message.added.getHours() +1 %>
-            <% hour = hour <=10 ? "0"+hour : hour %>
-            <% minute = message.added.getMinutes() +1 %>
-            <% minute = minute <=10 ? "0"+minute : minute %>
-            <% second = message.added.getSeconds() +1 %>
-            <% second = second <=10 ? "0"+second : second %>
-            <h5><%= date+"/"+ month + "/" + year +" " + hour +":" + minute + ":" + second %></h5>
+            <h3><%= message.name %></h3>
+            <h4><%= message.message %></h4>
+            <h5><%= message.time %></h5>
           </article>
         <%  }) %>
     </section>
