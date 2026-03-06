@@ -1,4 +1,5 @@
 const { Client } = require("pg");
+require("dotenv").config();
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS message_board(
@@ -17,8 +18,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString:
-      "postgresql://madhav-jariwala:Madhav@123@localhost:5432/mini_message_board",
+    connectionString: process.env.DB_URL_LOCAL,
   });
   await client.connect();
   await client.query(SQL);
